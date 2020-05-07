@@ -4,6 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import json
+import sys, traceback
 
 '''
 Website that champion names and pictures will be parsed from:
@@ -13,10 +14,18 @@ Website that champion base statistics and abilities will be parsed from:
 https://leagueoflegends.fandom.com/wiki/
 '''
 
+def getChromeDriver():
+    options = webdriver.ChromeOptions()
+    options.add_argument("--start-maximized")
+    options.add_experimental_option('excludeSwitches', ['enable-logging'])
+    driver = webdriver.Chrome(options=options)
+    return driver
+
+
 # method to get a list of all of the champions that are currently in the game by name
-def getAllChampions():
+def scrapeForChampionNames():
     # initializes our web driver
-    driver = webdriver.Chrome()
+    driver = getChromeDriver()
     driver.get("https://na.leagueoflegends.com/en-us/champions/")
 
     # gets the container that holds the list of all of the champion's icons
@@ -37,12 +46,12 @@ def getAllChampions():
 
 
 # method used to get the statistics of each champion found in the Champions.txt file
-def getChampionStatistics(championList):
+def scrapeForChampionStatistics(championList):
     championStatistics = {}
     lastValidChampion = ""
     dataSortChampionValue = ""
     # initializes our web driver
-    driver = webdriver.Chrome()
+    driver = getChromeDriver()
 
     #championList = ["ashe", "aurelion sol", "akali"]
     for championName in championList:
@@ -74,14 +83,14 @@ def getChampionStatistics(championList):
                 except TimeoutException:
                     continue
 
-            statisticsContainer = driver.find_elements_by_xpath("/html/body/div[3]/section/div[2]/article/div[1]/div[2]/div[2]/div[4]/div[2]/div[1]/aside[1]/*")
+            # there are two aside containers, one is the champion image which comes first and then followed by the statistics content
+            asideContainer = driver.find_elements_by_tag_name('aside')[1]
+            # gets all of the children of the container
+            statisticsContainer = asideContainer.find_elements_by_xpath("*")
 
-            # if this is the incorrect container then get the other one
-            if len(statisticsContainer) <= 0 or statisticsContainer[0].tag_name != "h2" or statisticsContainer[0].find_element_by_xpath('a').text != "Base statistics":
-                    statisticsContainer = driver.find_elements_by_xpath("/html/body/div[3]/section/div[2]/article/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/aside[1]/*")
-
-            if len(statisticsContainer) <= 0 or statisticsContainer[0].tag_name != "h2" or statisticsContainer[0].find_element_by_xpath('a').text != "Base statistics":
-                    statisticsContainer = driver.find_elements_by_xpath("/html/body/div[3]/section/div[2]/article/div[1]/div[2]/div[2]/div[3]/div[2]/div[1]/aside[1]/*")
+            # get the aside from inside of the container
+            #statisticsContainer = contentWrapper.find_element_by_xpath('div[1]/aside[1]')
+            #('/html/body/div[3]/section/div[2]/article/div[1]/div[2]/div[2]/div[3]/div[2]/div[1]/div[1]/div[1]/aside/section[1]/section[1]/section/div[1]/div/a[2]')
 
             # go through all of the stats that are listed for the champion but bypass the first and last one since therye not necessary
             for stat in statisticsContainer[1:-1]:
@@ -124,7 +133,9 @@ def getChampionStatistics(championList):
                     if dataSortChampionValue != "":
                         lastValidChampion = dataSortChampionValue
                         dataSortChampionValue = ""
+        
         except:
+            #traceback.print_exc()
             continue
 
     driver.quit()
@@ -132,7 +143,7 @@ def getChampionStatistics(championList):
         
 
 # method used to return a list of all current champions
-def getChampionList():
+def getListOfChampions():
     # opens the champions name list and gets all of our champion information
     championNameFile = open("Champions.txt", "r")
     championName = championNameFile.readline()
@@ -140,18 +151,19 @@ def getChampionList():
     while championName is not "":
         championList.append(championName)
         championName = championNameFile.readline()
+    championNameFile.close()
     return championList
 
 
 # method that converts the dictionary for each champion with stats into a json file
-def writeChampionsToJSON(championDict):
+def writeChampionDictToJson(championDict):
     with open('championStatistics.json', 'w') as fp:
         json.dump(championDict, fp, indent=4)
 
 
 # method used to collect all of the champion information, aggregate of all methods
 def getAllChampionInformation():
-    #getAllChampions()
-    championList = getChampionList()
-    championDict = getChampionStatistics(championList)
-    writeChampionsToJSON(championDict)
+    scrapeForChampionNames()
+    championList = getListOfChampions()
+    championDict = scrapeForChampionStatistics(championList)
+    writeChampionDictToJson(championDict)
