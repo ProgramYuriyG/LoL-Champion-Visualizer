@@ -142,6 +142,13 @@ def scrapeForChampionStatistics(championList):
     return championStatistics
         
 
+# method to scrape for the champions 3d models and then download them to specific folders
+# remove background with: https://photoscissors.com or https://www.remove.bg/upload
+# get the 3d model from https://teemo.gg/model-viewer
+def scrapeForChampionModels():
+    pass
+
+
 # method used to return a list of all current champions
 def getListOfChampions():
     # opens the champions name list and gets all of our champion information
