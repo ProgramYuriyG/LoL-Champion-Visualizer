@@ -5,6 +5,9 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import json
 import sys, traceback
+import urllib.request
+import traceback
+import os
 
 '''
 Website that champion names and pictures will be parsed from:
@@ -23,7 +26,7 @@ def getChromeDriver():
 
 
 # method to get a list of all of the champions that are currently in the game by name
-def scrapeForChampionNames():
+def scrapeForChampionNames(writeToFile=True):
     # initializes our web driver
     driver = getChromeDriver()
     driver.get("https://na.leagueoflegends.com/en-us/champions/")
@@ -37,12 +40,14 @@ def scrapeForChampionNames():
         championList.append(href.split("/")[-2])
     
     # puts the champions into a text file
-    championFile = open("Champions.txt", "w")
-    for championName in championList:
-        championName = championName.replace("-", " ")
-        championFile.write(championName+"\n")
-    championFile.close()
+    if writeToFile:
+        championFile = open("Champions.txt", "w")
+        for championName in championList:
+            championName = championName.replace("-", " ")
+            championFile.write(championName+"\n")
+        championFile.close()
     driver.quit()
+    return championList
 
 
 # method used to get the statistics of each champion found in the Champions.txt file
@@ -61,10 +66,10 @@ def scrapeForChampionStatistics(championList):
             try:
                 driver.get("https://leagueoflegends.fandom.com/wiki/"+championName.replace(" ", "_"))
                 WebDriverWait(driver, 6).until(EC.visibility_of_element_located((By.ID, "infobox-champion-container")))
-            except TimeoutException:
+            except:
                 try:
                     driver.get("https://leagueoflegends.fandom.com/wiki/List_of_champions")
-                    championElements = driver.find_elements_by_xpath("/html/body/div[3]/section/div[2]/article/div[1]/div[1]/div[2]/table[2]/tbody/*")
+                    championElements = driver.find_elements_by_tag_name("tbody")[1].find_element_by_xpath("*")
                     foundChampion = False
                     for element in championElements:
                         # if we have found the champion then get its name from the attribute and go to the site
@@ -80,7 +85,7 @@ def scrapeForChampionStatistics(championList):
                             continue
 
                     WebDriverWait(driver, 6).until(EC.visibility_of_element_located((By.ID, "infobox-champion-container")))
-                except TimeoutException:
+                except:
                     continue
 
             # there are two aside containers, one is the champion image which comes first and then followed by the statistics content
@@ -88,6 +93,13 @@ def scrapeForChampionStatistics(championList):
             # gets all of the children of the container
             statisticsContainer = asideContainer.find_elements_by_xpath("*")
 
+            try:
+                imageRenderContainer = driver.find_elements_by_tag_name('aside')[0]
+                championImage = imageRenderContainer.find_elements_by_tag_name('img')[0]
+                urllib.request.urlretrieve(championImage.get_attribute('src'), "images\\championImages\\"+championImage.get_attribute('data-image-key').lower())
+            except:
+                #traceback.print_exc()
+                pass
             # get the aside from inside of the container
             #statisticsContainer = contentWrapper.find_element_by_xpath('div[1]/aside[1]')
             #('/html/body/div[3]/section/div[2]/article/div[1]/div[2]/div[2]/div[3]/div[2]/div[1]/div[1]/div[1]/aside/section[1]/section[1]/section/div[1]/div/a[2]')
@@ -123,9 +135,9 @@ def scrapeForChampionStatistics(championList):
                     second_value = container.find_elements_by_xpath('section/div[2]')[-1].text.replace(second_label, "")
 
 
-                    first_label = first_label.replace("\n", "")
+                    first_label = first_label.replace("\n", "").replace(".", "")
                     first_value = first_value.replace("\n", "")
-                    second_label = second_label.replace("\n", "")
+                    second_label = second_label.replace("\n", "").replace(".", "")
                     second_value = second_value.replace("\n", "")
                     championStatistics[championName][first_label] = first_value
                     championStatistics[championName][second_label] = second_value
@@ -156,6 +168,7 @@ def getListOfChampions():
     championName = championNameFile.readline()
     championList = []
     while championName is not "":
+        championName = championName.replace("\n", "")
         championList.append(championName)
         championName = championNameFile.readline()
     championNameFile.close()
@@ -164,9 +177,40 @@ def getListOfChampions():
 
 # method that converts the dictionary for each champion with stats into a json file
 def writeChampionDictToJson(championDict):
+    if os.path.exists('championStatistics.json'):
+        with open('championStatistics.json', 'r') as fp:
+            originalChampionDict = json.load(fp)
+        
+        combinedDict = {**originalChampionDict, **championDict}
+    else:
+        combinedDict = championDict
+    
     with open('championStatistics.json', 'w') as fp:
-        json.dump(championDict, fp, indent=4)
+        json.dump(combinedDict, fp, indent=4)
 
+
+def getSpecificChampionInformation(championName):
+    with open('championStatistics.json', 'r') as fp:
+        championDict = json.load(fp)
+    if championName in championDict:
+        return championDict[championName]
+    else:
+        return None
+
+
+def checkForUpdates():
+    if os.path.exists('Champions.txt'):
+        oldList = getListOfChampions()
+        newList = scrapeForChampionNames(True)
+        newList = [name.replace('-', ' ') for name in newList]
+        set_difference = set(newList) - set(oldList)
+        list_difference = list(set_difference)
+        if list_difference:            
+            championDict = scrapeForChampionStatistics(list_difference)
+            writeChampionDictToJson(championDict)
+        return True
+    else:
+        getAllChampionInformation()
 
 # method used to collect all of the champion information, aggregate of all methods
 def getAllChampionInformation():
