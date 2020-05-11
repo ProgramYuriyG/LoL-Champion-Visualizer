@@ -1,5 +1,7 @@
 import kivy
 import math
+from os import listdir
+from os.path import isfile, join
 # higher order imports
 from kivy.app import App
 from kivy.core.window import Window
@@ -21,16 +23,8 @@ from kivy.uix.image import Image
 from kivy.uix.tabbedpanel import TabbedPanel
 from kivy.uix.tabbedpanel import TabbedPanelItem
 from kivy.uix.tabbedpanel import TabbedPanelHeader
+from kivy.graphics.svg import Svg
 
-'''
-python -m pip install --upgrade pip wheel setuptools virtualenv
-python -m virtualenv kivy_venv
-kivy_venv\Scripts\activate
-python -m pip install docutils pygments pypiwin32 kivy_deps.sdl2==0.1.* kivy_deps.glew==0.1.*
-python -m pip install kivy_deps.gstreamer==0.1.*
-python -m pip install kivy==1.11.1
-pip install selenium
-'''
 
 skinContainerSize = 0.35
 
@@ -43,18 +37,30 @@ class ChampionSkinContainer(RelativeLayout):
         self.championName = champion
 
     def drawSkinContainer(self):
-        visual_image = 'images\\championImages\\'+str(self.championName).lower()+'_render.png'
-        skinName = visual_image.split("\\")[-1].split(".")[0].replace("_render", "").capitalize()
+        skinDirectory = 'images\\championImages\\'+self.championName
+        skinList = [f for f in listdir(skinDirectory) if (isfile(join(skinDirectory, f)) and 'icon' not in f)]
+        self.skinIndex = 0
+        self.skinDirectory = skinDirectory
+        self.skinList = skinList
+
+        renderList = []
+        for skin in skinList:
+            if "render" in skin.lower():
+                renderList.append(skin)
+        visual_image = skinDirectory + "\\" + renderList[0]
+        skinName = visual_image.split("\\")[-1].replace(".png", "").replace("_", " ").replace("%27", "'").title()
+        if "Iv" in skinName:
+            skinName = skinName.replace("Iv", "IV")
 
         skin_layout = RelativeLayout(size_hint=(skinContainerSize, 1), pos_hint ={'left':1, 'top':1})
         skin_utility_layout = GridLayout(cols=3, size_hint=(1, 0.2), pos_hint ={'left':1, 'bottom':1})
         leftButtonLayout = AnchorLayout(anchor_x='left')
         rightButtonLayout = AnchorLayout(anchor_x='right')
 
-        skin_visual = Image(source=visual_image, size_hint=(1, 0.8), pos_hint ={'left':1, 'top':1})
-        left_button = Button(background_normal='images\\icons\\left-arrow-white.png', background_down ='images\\icons\\left-arrow-white_pressed.png', size_hint=(0.3, 0.3), pos_hint ={'x':0.5, 'y':0.5}, border=(0, 0, 0, 0))
+        skin_visual = Image(source=visual_image, size_hint=(0.8, 0.7), pos_hint ={'right':0.93, 'top':0.95}, keep_ratio=True, allow_stretch=True)
         skin_text = Label(text=skinName, size_hint=(0.8, 1), font_size=20)
-        right_button = Button(background_normal='images\\icons\\right-arrow-white.png', background_down ='images\\icons\\right-arrow-white_pressed.png', size_hint=(0.3, 0.3), pos_hint ={'x':0.5, 'y':0.5}, border=(0, 0, 0, 0))
+        left_button = Button(on_press=lambda l:self.rotateChampionSkin("left", skin_visual, skin_text), background_normal='images\\icons\\left-arrow-white.png', background_down ='images\\icons\\left-arrow-white_pressed.png', size_hint=(0.3, 0.3), pos_hint ={'x':0.5, 'y':0.5}, border=(0, 0, 0, 0))
+        right_button = Button(on_press=lambda r:self.rotateChampionSkin("right", skin_visual, skin_text), background_normal='images\\icons\\right-arrow-white.png', background_down ='images\\icons\\right-arrow-white_pressed.png', size_hint=(0.3, 0.3), pos_hint ={'x':0.5, 'y':0.5}, border=(0, 0, 0, 0))
 
         leftButtonLayout.add_widget(left_button)
         rightButtonLayout.add_widget(right_button)
@@ -67,6 +73,27 @@ class ChampionSkinContainer(RelativeLayout):
         skin_layout.add_widget(skin_utility_layout)
 
         return skin_layout
+    
+    def rotateChampionSkin(self, direction, displayedImage, skinName):
+        index = self.skinIndex
+        directory = self.skinDirectory
+        skinList = self.skinList
+        if direction == "left":
+            index -= 1
+        else:
+            index += 1
+        index = index % len(skinList)
+        # sets the skinIndex
+        if index == -1:
+            self.skinIndex = index = len(skinList) - 1
+        else:
+            self.skinIndex = index
+        # changes the skin
+        displayedImage.source = directory + "\\" + skinList[index]
+        skinName.text = skinList[index].replace("_", " ").replace(".png", "").replace(".jpg", "").replace(".jpeg", "").replace("%27", "'").title()
+        if "Iv" in skinName.text:
+            skinName.text = skinName.text.replace("Iv", "IV")
+            
 
 
 class ChampionInformationContainer(BoxLayout):
@@ -121,20 +148,23 @@ class ChampionInformationContainer(BoxLayout):
 
         # layouts for resources
         healthLayout = self.createResourceLayouts(image='images\\icons\\health.png', label="Health", value=self.content['Health'])
-        healthRegenLayout = self.createResourceLayouts(image='images\\icons\\health.png', label="Health\nRegeneration", value=self.content['Health regen'])
-        armorLayout = self.createResourceLayouts(image='images\\icons\\shield.png', label="Armor", value=self.content['Armor'])
-        magicResistanceLayout = self.createResourceLayouts(image='images\\icons\\shield.png', label="Magic\nResistance", value=self.content['Magic resist'])
+        healthRegenLayout = self.createResourceLayouts(image='images\\icons\\health_regeneration.png', label="Health\nRegeneration", value=self.content['Health regen'])
+        armorLayout = self.createResourceLayouts(image='images\\icons\\armor.png', label="Armor", value=self.content['Armor'])
+        magicResistanceLayout = self.createResourceLayouts(image='images\\icons\\magic_resistance.png', label="Magic\nResistance", value=self.content['Magic resist'])
 
         if 'Energy' in self.content:
-            resourceLayout = self.createResourceLayouts(image='images\\icons\\shield.png', label="Energy", value=self.content['Energy'])
-            resourceRegenLayout = self.createResourceLayouts(image='images\\icons\\shield.png', label="Energy\nRegeneration", value=self.content['Energy regen'])
+            resourceLayout = self.createResourceLayouts(image='images\\icons\\energy.png', label="Energy", value=self.content['Energy'])
+            resourceRegenLayout = self.createResourceLayouts(image='images\\icons\\energy_regeneration.png', label="Energy\nRegeneration", value=self.content['Energy regen'])
         elif 'Mana' in self.content:
-            resourceLayout = self.createResourceLayouts(image='images\\icons\\shield.png', label="Mana", value=self.content['Mana'])
-            resourceRegenLayout = self.createResourceLayouts(image='images\\icons\\shield.png', label="Mana\nRegeneration", value=self.content['Mana regen'])
+            resourceLayout = self.createResourceLayouts(image='images\\icons\\mana.png', label="Mana", value=self.content['Mana'])
+            resourceRegenLayout = self.createResourceLayouts(image='images\\icons\\mana_regeneration.png', label="Mana\nRegeneration", value=self.content['Mana regen'])
         else: 
-            resourceLayout = self.createResourceLayouts(image='images\\icons\\shield.png', label="Resource", value=self.content['Resource'])
-            resourceRegenLayout = self.createResourceLayouts(image='images\\icons\\shield.png', label="Resource\nRegeneration", value=self.content['Resource regen'])
-        
+            resourceLayout = self.createResourceLayouts(image='images\\icons\\resource.png', label="Resource", value=self.content['Resource'])
+            try:
+                resourceRegenLayout = self.createResourceLayouts(image='images\\icons\\resource_regeneration.png', label="Resource\nRegeneration", value=self.content['Resource regen'])
+            except:
+                resourceRegenLayout = self.createResourceLayouts(image='images\\icons\\secondary_bar.png', label="Secondary\Bar", value=self.content['Secondary Bar'])    
+
         row1 = self.combineBoxLayouts(healthLayout, healthRegenLayout)
         row2 = self.combineBoxLayouts(resourceLayout, resourceRegenLayout)
         row3 = self.combineBoxLayouts(armorLayout, magicResistanceLayout)
@@ -149,12 +179,12 @@ class ChampionInformationContainer(BoxLayout):
         offensiveLayout = BoxLayout(orientation="vertical")
 
         # layouts for resources
-        attackDamangeLayout = self.createResourceLayouts(image='images\\icons\\health.png', label="Attack\nDamage", value=self.content['Attack damage'])
-        criticalDamageLayout = self.createResourceLayouts(image='images\\icons\\health.png', label="Critical\nDamage", value=self.content['Crit damage'])
-        baseAttackSpeedLayout = self.createResourceLayouts(image='images\\icons\\shield.png', label="Base\nAttack Speed", value=self.content['Base AS'])
-        attackSpeedRatioLayout = self.createResourceLayouts(image='images\\icons\\shield.png', label="Attack\nSpeed Ratio", value=self.content['AS ratio'])
-        bonusAttackSpeedLayout = self.createResourceLayouts(image='images\\icons\\shield.png', label="Bonus\nAttack Speed", value=self.content['Bonus AS'])
-        attackWindupLayout = self.createResourceLayouts(image='images\\icons\\shield.png', label="Attack\nWindup", value=self.content['Attack windup'])
+        attackDamangeLayout = self.createResourceLayouts(image='images\\icons\\attack_damage.png', label="Attack\nDamage", value=self.content['Attack damage'])
+        criticalDamageLayout = self.createResourceLayouts(image='images\\icons\\critical_strike.png', label="Critical\nDamage", value=self.content['Crit damage'])
+        baseAttackSpeedLayout = self.createResourceLayouts(image='images\\icons\\attack_speed.png', label="Base\nAttack Speed", value=self.content['Base AS'])
+        attackSpeedRatioLayout = self.createResourceLayouts(image='images\\icons\\attack_speed_ratio.png', label="Attack\nSpeed Ratio", value=self.content['AS ratio'])
+        bonusAttackSpeedLayout = self.createResourceLayouts(image='images\\icons\\bonus_attack_speed.png', label="Bonus\nAttack Speed", value=self.content['Bonus AS'])
+        attackWindupLayout = self.createResourceLayouts(image='images\\icons\\attack_windup.png', label="Attack\nWindup", value=self.content['Attack windup'])
 
         row1 = self.combineBoxLayouts(attackDamangeLayout, criticalDamageLayout)
         row2 = self.combineBoxLayouts(baseAttackSpeedLayout, bonusAttackSpeedLayout)
@@ -171,12 +201,12 @@ class ChampionInformationContainer(BoxLayout):
         rangesLayout = BoxLayout(orientation="vertical")
 
         # layouts for resources
-        gameplayRadiusLayout = self.createResourceLayouts(image='images\\icons\\shield.png', label="Hit\nBox", value=self.content['Gameplay radius'])
-        pathingRadiusLayout = self.createResourceLayouts(image='images\\icons\\health.png', label="Pathing\nRadius", value=self.content['Pathing radius'])
-        selectionRadiusLayout = self.createResourceLayouts(image='images\\icons\\health.png', label="Selection\nRadius", value=self.content['Selection radius'])
-        autoRadiusLayout = self.createResourceLayouts(image='images\\icons\\shield.png', label="Auto\nRadius", value=self.content['Auto radius'])
-        attackRangeLayout = self.createResourceLayouts(image='images\\icons\\shield.png', label="Attack\nRange", value=self.content['Attack range'])   
-        movementSpeedLayout = self.createResourceLayouts(image='images\\icons\\shield.png', label="Movement\Speed", value=self.content['Move speed'])  
+        gameplayRadiusLayout = self.createResourceLayouts(image='images\\icons\\hit_box_radius.png', label="Hit\nBox", value=self.content['Gameplay radius'])
+        pathingRadiusLayout = self.createResourceLayouts(image='images\\icons\\pathing_radius.png', label="Pathing\nRadius", value=self.content['Pathing radius'])
+        selectionRadiusLayout = self.createResourceLayouts(image='images\\icons\\selection_radius.png', label="Selection\nRadius", value=self.content['Selection radius'])
+        autoRadiusLayout = self.createResourceLayouts(image='images\\icons\\auto_radius.png', label="Auto\nRadius", value=self.content['Auto radius'])
+        attackRangeLayout = self.createResourceLayouts(image='images\\icons\\attack_range.png', label="Attack\nRange", value=self.content['Attack range'])   
+        movementSpeedLayout = self.createResourceLayouts(image='images\\icons\\movement_speed.png', label="Movement\nSpeed", value=self.content['Move speed'])  
 
         row1 = self.combineBoxLayouts(attackRangeLayout, autoRadiusLayout)
         row2 = self.combineBoxLayouts(gameplayRadiusLayout, pathingRadiusLayout)
@@ -200,7 +230,7 @@ class ChampionInformationContainer(BoxLayout):
     def createResourceLayouts(self, image, label, value):
         label = self.padLabelWidth(label)
         layout = GridLayout(cols=4, padding=[15,20,0,0], size_hint=(0.3, 1))
-        icon = Image(source=image, keep_ratio=True, size_hint_x= 0.4, pos_hint ={'left':1, 'top':1})
+        icon = Image(source=image, keep_ratio=True, size_hint_x= 0.2, pos_hint ={'left':1, 'top':1})
         label = Label(text=label, font_size="24sp", halign="left", valign="middle", pos_hint ={'left':1, 'top':1})
         value = Label(text=value, font_size="20sp", halign="left", valign="middle", pos_hint ={'left':1, 'top':1})
         layout.add_widget(icon)

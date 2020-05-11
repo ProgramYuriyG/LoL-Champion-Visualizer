@@ -9,6 +9,7 @@ Config.set('input', 'mouse', 'mouse,multitouch_on_demand')
 # regular imports
 import kivy
 import math
+import pyglet
 # higher order imports
 from kivy.app import App
 from kivy.core.window import Window
@@ -27,6 +28,21 @@ from kivy.uix.label import Label
 from kivy.uix.button import Button
 from kivy.uix.image import Image
 from kivy.uix.tabbedpanel import TabbedPanel, TabbedPanelItem, TabbedPanelHeader
+
+'''
+python -m pip install --upgrade pip wheel setuptools virtualenv
+python -m virtualenv kivy_venv
+kivy_venv\Scripts\activate
+python -m pip install docutils pygments pypiwin32 kivy_deps.sdl2==0.1.* kivy_deps.glew==0.1.*
+python -m pip install kivy_deps.gstreamer==0.1.*
+python -m pip install kivy==1.11.1
+pip install selenium
+'''
+
+'''
+from kivy.core.window import Window
+Window.clearcolor = (1, 1, 1, 1)
+'''
 
 
 class ChampionVisualizerApp(App):

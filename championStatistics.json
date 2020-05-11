@@ -1,5 +1,5 @@
 {
-    "aatrox": {
+    "Aatrox": {
         "Health": "580 \u2013 2110",
         "Resource": "N/A",
         "Health regen": "3 \u2013 20",
@@ -19,7 +19,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 475"
     },
-    "ahri": {
+    "Ahri": {
         "Health": "526 \u2013 2090",
         "Mana": "418 \u2013 843",
         "Health regen": "6.5 \u2013 16.7",
@@ -39,7 +39,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 525"
     },
-    "akali": {
+    "Akali": {
         "Health": "575 \u2013 2190",
         "Energy": " 200",
         "Health regen": "8 \u2013 16.5",
@@ -59,7 +59,7 @@
         "Pathing radius": " 30",
         "Auto radius": " 400"
     },
-    "alistar": {
+    "Alistar": {
         "Health": "600 \u2013 2402",
         "Mana": "350 \u2013 1030",
         "Health regen": "8.5 \u2013 22.95",
@@ -79,7 +79,7 @@
         "Pathing radius": " 50",
         "Auto radius": " 600"
     },
-    "amumu": {
+    "Amumu": {
         "Health": "613.12 \u2013 2041.12",
         "Mana": "287.2 \u2013 967.2",
         "Health regen": "9 \u2013 23.45",
@@ -99,7 +99,7 @@
         "Pathing radius": " 30",
         "Auto radius": " 600"
     },
-    "anivia": {
+    "Anivia": {
         "Health": "480 \u2013 1874",
         "Mana": "495 \u2013 920",
         "Health regen": "5.5 \u2013 14.85",
@@ -119,7 +119,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 600"
     },
-    "annie": {
+    "Annie": {
         "Health": "524 \u2013 2020",
         "Mana": "418 \u2013 843",
         "Health regen": "5.5 \u2013 14.85",
@@ -139,7 +139,7 @@
         "Pathing radius": " 30",
         "Auto radius": " 625"
     },
-    "aphelios": {
+    "Aphelios": {
         "Health": "500 \u2013 1962",
         "Mana": "348 \u2013 1062",
         "Health regen": "3.25 \u2013 12.6",
@@ -159,7 +159,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 750"
     },
-    "ashe": {
+    "Ashe": {
         "Health": "539 \u2013 1984",
         "Mana": "280 \u2013 824",
         "Health regen": "3.5 \u2013 12.85",
@@ -179,8 +179,27 @@
         "Pathing radius": " 35",
         "Auto radius": " 600"
     },
-    "aurelion sol": {},
-    "azir": {
+    "Aurelion Sol": {
+        "Health": "575 \u2013 2139",
+        "Mana": "350 \u2013 1200",
+        "Health regen": "7 \u2013 17.2",
+        "Mana regen": "6 \u2013 19.6",
+        "Armor": "19 \u2013 80.2",
+        "Attack damage": "57 \u2013 111.4",
+        "Magic resist": "30 \u2013 38.5",
+        "Crit damage": "200%",
+        "Move speed": "325",
+        "Attack range": "550",
+        "Base AS": "0.625",
+        "Attack windup": "20%",
+        "AS ratio": "N/A",
+        "Bonus AS": "0 \u2013 23.12%",
+        "Gameplay radius": " 65",
+        "Selection radius": " 165",
+        "Pathing radius": " 35",
+        "Auto radius": " 400"
+    },
+    "Azir": {
         "Health": "552 \u2013 2116",
         "Mana": "480 \u2013 837",
         "Health regen": "7 \u2013 19.75",
@@ -202,7 +221,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 700"
     },
-    "bard": {
+    "Bard": {
         "Health": "575 \u2013 2088",
         "Mana": "350 \u2013 1200",
         "Health regen": "5.5 \u2013 14.85",
@@ -222,7 +241,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 600"
     },
-    "blitzcrank": {
+    "Blitzcrank": {
         "Health": "582.6 \u2013 2197.6",
         "Mana": "267.2 \u2013 947.2",
         "Health regen": "8.5 \u2013 21.25",
@@ -242,7 +261,7 @@
         "Pathing radius": " 50",
         "Auto radius": " 600"
     },
-    "brand": {
+    "Brand": {
         "Health": "519.68 \u2013 2015.68",
         "Mana": "469 \u2013 826",
         "Health regen": "5.5 \u2013 14.85",
@@ -262,7 +281,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 600"
     },
-    "braum": {
+    "Braum": {
         "Health": "540 \u2013 2206",
         "Mana": "310.6 \u2013 1075.6",
         "Health regen": "8.5 \u2013 25.5",
@@ -282,7 +301,7 @@
         "Pathing radius": " 50",
         "Auto radius": " 800"
     },
-    "caitlyn": {
+    "Caitlyn": {
         "Health": "481 \u2013 2028",
         "Mana": "313.7 \u2013 908.7",
         "Health regen": "3.5 \u2013 12.85",
@@ -302,7 +321,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 600"
     },
-    "camille": {
+    "Camille": {
         "Health": "575.6 \u2013 2020.6",
         "Mana": "338.8 \u2013 882.8",
         "Health regen": "8.5 \u2013 22.1",
@@ -322,7 +341,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 550"
     },
-    "cassiopeia": {
+    "Cassiopeia": {
         "Health": "575 \u2013 2105",
         "Mana": "350 \u2013 1030",
         "Health regen": "5.5 \u2013 14",
@@ -342,8 +361,27 @@
         "Pathing radius": " 35",
         "Auto radius": " 600"
     },
-    "cho gath": {},
-    "corki": {
+    "Cho'Gath": {
+        "Health": "574.4 \u2013 1934.4",
+        "Mana": "272.2 \u2013 952.2",
+        "Health regen": "9 \u2013 23.45",
+        "Mana regen": "7.206 \u2013 14.86",
+        "Armor": "38 \u2013 97.5",
+        "Attack damage": "69 \u2013 140.4",
+        "Magic resist": "32.1 \u2013 53.35",
+        "Crit damage": "200%",
+        "Move speed": "345",
+        "Attack range": "125",
+        "Base AS": "0.625",
+        "Attack windup": "21.9%",
+        "AS ratio": "N/A",
+        "Bonus AS": "0 \u2013 24.48%",
+        "Gameplay radius": " 80",
+        "Selection radius": " 130",
+        "Pathing radius": " 50",
+        "Auto radius": " 500"
+    },
+    "Corki": {
         "Health": "518 \u2013 1997",
         "Mana": "350.16 \u2013 928.16",
         "Health regen": "5.5 \u2013 14.85",
@@ -363,7 +401,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 600"
     },
-    "darius": {
+    "Darius": {
         "Health": "582.24 \u2013 2282.24",
         "Mana": "263 \u2013 900.5",
         "Health regen": "10 \u2013 26.15",
@@ -383,7 +421,7 @@
         "Pathing radius": " 26",
         "Auto radius": " 400"
     },
-    "diana": {
+    "Diana": {
         "Health": "594 \u2013 2209",
         "Mana": "375 \u2013 800",
         "Health regen": "7.5 \u2013 21.95",
@@ -403,8 +441,27 @@
         "Pathing radius": " 35",
         "Auto radius": " 600"
     },
-    "dr mundo": {},
-    "draven": {
+    "Dr. Mundo": {
+        "Health": "582.52 \u2013 2095.52",
+        "Resource": "N/A (Uses Health)",
+        "Health regen": "8 \u2013 20.75",
+        "Resource regen": "N/A",
+        "Armor": "36 \u2013 95.5",
+        "Attack damage": "61.27 \u2013 120.77",
+        "Magic resist": "32.1 \u2013 53.35",
+        "Crit damage": "200%",
+        "Move speed": "345",
+        "Attack range": "125",
+        "Base AS": "0.721",
+        "Attack windup": "16.031%",
+        "AS ratio": "0.625",
+        "Bonus AS": "0 \u2013 47.6%",
+        "Gameplay radius": " 80",
+        "Selection radius": " 135",
+        "Pathing radius": " 50",
+        "Auto radius": " 600"
+    },
+    "Draven": {
         "Health": "574 \u2013 2070",
         "Mana": "360.56 \u2013 1023.56",
         "Health regen": "3.75 \u2013 15.65",
@@ -424,7 +481,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 600"
     },
-    "ekko": {
+    "Ekko": {
         "Health": "585 \u2013 2030",
         "Mana": "280 \u2013 1130",
         "Health regen": "9 \u2013 24.3",
@@ -444,7 +501,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 600"
     },
-    "elise": {
+    "Elise": {
         "Health": "534 \u2013 2115",
         "Mana": "324 \u2013 1174",
         "Health regen": "5.5 \u2013 15.7",
@@ -464,7 +521,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 550"
     },
-    "evelynn": {
+    "Evelynn": {
         "Health": "572 \u2013 2000",
         "Mana": "315.6 \u2013 1029.6",
         "Health regen": "8.5 \u2013 21.25",
@@ -484,7 +541,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 400"
     },
-    "ezreal": {
+    "Ezreal": {
         "Health": "500 \u2013 1962",
         "Mana": "375 \u2013 1225",
         "Health regen": "4 \u2013 13.35",
@@ -504,7 +561,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 550"
     },
-    "fiddlesticks": {
+    "Fiddlesticks": {
         "Health": "580.4 \u2013 2144.4",
         "Mana": "500 \u2013 976",
         "Health regen": "5.5 \u2013 15.7",
@@ -524,7 +581,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 520"
     },
-    "fiora": {
+    "Fiora": {
         "Health": "550 \u2013 1995",
         "Mana": "300 \u2013 980",
         "Health regen": "8.5 \u2013 17.85",
@@ -544,7 +601,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 600"
     },
-    "fizz": {
+    "Fizz": {
         "Health": "570 \u2013 2236",
         "Mana": "317.2 \u2013 946.2",
         "Health regen": "8 \u2013 19.9",
@@ -564,7 +621,7 @@
         "Pathing radius": " 30",
         "Auto radius": " 400"
     },
-    "galio": {
+    "Galio": {
         "Health": "562 \u2013 2466",
         "Mana": "500 \u2013 1180",
         "Health regen": "8 \u2013 21.6",
@@ -584,7 +641,7 @@
         "Pathing radius": " 50",
         "Auto radius": " 600"
     },
-    "gangplank": {
+    "Gangplank": {
         "Health": "540 \u2013 1934",
         "Mana": "282 \u2013 962",
         "Health regen": "6 \u2013 16.2",
@@ -604,7 +661,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 400"
     },
-    "garen": {
+    "Garen": {
         "Health": "620 \u2013 2048",
         "Resource": "N/A",
         "Health regen": "8 \u2013 16.5",
@@ -624,7 +681,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 600"
     },
-    "gnar": {
+    "Gnar": {
         "Health": "510 \u2013 1615",
         "Resource": "N/A",
         "Health regen": "4.5 \u2013 34.25",
@@ -644,7 +701,7 @@
         "Pathing radius": " 30",
         "Auto radius": " 600"
     },
-    "gragas": {
+    "Gragas": {
         "Health": "600 \u2013 2215",
         "Mana": "400 \u2013 1199",
         "Health regen": "5.5 \u2013 14",
@@ -664,7 +721,7 @@
         "Pathing radius": " 50",
         "Auto radius": " 600"
     },
-    "graves": {
+    "Graves": {
         "Health": "555 \u2013 2119",
         "Mana": "325 \u2013 1005",
         "Health regen": "8 \u2013 19.9",
@@ -684,7 +741,7 @@
         "Pathing radius": " 10",
         "Auto radius": " 750"
     },
-    "hecarim": {
+    "Hecarim": {
         "Health": "580 \u2013 2110",
         "Mana": "277.2 \u2013 957.2",
         "Health regen": "7 \u2013 19.75",
@@ -704,7 +761,7 @@
         "Pathing radius": " 50",
         "Auto radius": " 750"
     },
-    "heimerdinger": {
+    "Heimerdinger": {
         "Health": "488 \u2013 1967",
         "Mana": "385 \u2013 725",
         "Health regen": "7 \u2013 16.35",
@@ -724,7 +781,7 @@
         "Pathing radius": " 31",
         "Auto radius": " 550"
     },
-    "illaoi": {
+    "Illaoi": {
         "Health": "585.6 \u2013 2200.6",
         "Mana": "300 \u2013 980",
         "Health regen": "9.5 \u2013 23.1",
@@ -744,7 +801,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 600"
     },
-    "irelia": {
+    "Irelia": {
         "Health": "580 \u2013 2195",
         "Mana": "350 \u2013 860",
         "Health regen": "8.5 \u2013 22.95",
@@ -764,7 +821,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 600"
     },
-    "ivern": {
+    "Ivern": {
         "Health": "585 \u2013 2200",
         "Mana": "450 \u2013 1470",
         "Health regen": "7 \u2013 21.45",
@@ -784,7 +841,7 @@
         "Pathing radius": " 40",
         "Auto radius": " 750"
     },
-    "janna": {
+    "Janna": {
         "Health": "500 \u2013 1690",
         "Mana": "350 \u2013 1438",
         "Health regen": "5.5 \u2013 14.85",
@@ -804,8 +861,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 550"
     },
-    "jarvan iv": {},
-    "jax": {
+    "Jax": {
         "Health": "592.8 \u2013 2037.8",
         "Mana": "338.8 \u2013 882.8",
         "Health regen": "8.5 \u2013 17.85",
@@ -825,7 +881,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 400"
     },
-    "jayce": {
+    "Jayce": {
         "Health": "560 \u2013 2090",
         "Mana": "375 \u2013 1140",
         "Health regen": "6 \u2013 16.2",
@@ -845,7 +901,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 200"
     },
-    "jhin": {
+    "Jhin": {
         "Health": "556 \u2013 2103",
         "Mana": "300 \u2013 1150",
         "Health regen": "3.75 \u2013 13.1",
@@ -865,7 +921,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 800"
     },
-    "jinx": {
+    "Jinx": {
         "Health": "581 \u2013 2009",
         "Mana": "245 \u2013 1010",
         "Health regen": "3.75 \u2013 12.25",
@@ -885,8 +941,27 @@
         "Pathing radius": " 35",
         "Auto radius": " 550"
     },
-    "kai sa": {},
-    "kalista": {
+    "Kai'Sa": {
+        "Health": "571 \u2013 2033",
+        "Mana": "344.88 \u2013 990.88",
+        "Health regen": "3.5 \u2013 12.85",
+        "Mana regen": "8.2 \u2013 15.85",
+        "Armor": "28 \u2013 79",
+        "Attack damage": "59 \u2013 87.9",
+        "Magic resist": "30 \u2013 38.5",
+        "Crit damage": "200%",
+        "Move speed": "335",
+        "Attack range": "525",
+        "Base AS": "0.644",
+        "Attack windup": "16.108%",
+        "AS ratio": "N/A",
+        "Bonus AS": "0 \u2013 30.6%",
+        "Gameplay radius": " 65",
+        "Selection radius": " 100",
+        "Pathing radius": " 41",
+        "Auto radius": " 800"
+    },
+    "Kalista": {
         "Health": "534 \u2013 2234",
         "Mana": "250 \u2013 1015",
         "Health regen": "3.75 \u2013 13.1",
@@ -906,7 +981,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 900"
     },
-    "karma": {
+    "Karma": {
         "Health": "534 \u2013 2149",
         "Mana": "374 \u2013 1224",
         "Health regen": "5.5 \u2013 14.85",
@@ -926,7 +1001,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 525"
     },
-    "karthus": {
+    "Karthus": {
         "Health": "528 \u2013 2007",
         "Mana": "467 \u2013 985.5",
         "Health regen": "6.5 \u2013 15.85",
@@ -946,7 +1021,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 450"
     },
-    "kassadin": {
+    "Kassadin": {
         "Health": "576 \u2013 2106",
         "Mana": "397.6 \u2013 1536.6",
         "Health regen": "6 \u2013 14.5",
@@ -966,7 +1041,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 400"
     },
-    "katarina": {
+    "Katarina": {
         "Health": "602 \u2013 2200",
         "Resource": "N/A",
         "Health regen": "7.5 \u2013 19.4",
@@ -986,7 +1061,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 400"
     },
-    "kayle": {
+    "Kayle": {
         "Health": "600 \u2013 2045",
         "Mana": "330 \u2013 1180",
         "Health regen": "5 \u2013 13.5",
@@ -1006,7 +1081,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 600"
     },
-    "kayn": {
+    "Kayn": {
         "Health": "585 \u2013 2030",
         "Mana": "410 \u2013 1260",
         "Health regen": "8 \u2013 20.75",
@@ -1026,7 +1101,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 400"
     },
-    "kennen": {
+    "Kennen": {
         "Health": "541 \u2013 1969",
         "Energy": " 200",
         "Health regen": "5.5 \u2013 16.55",
@@ -1046,8 +1121,27 @@
         "Pathing radius": " 30",
         "Auto radius": " 550"
     },
-    "kha zix": {},
-    "kindred": {
+    "Kha'Zix": {
+        "Health": "572.8 \u2013 2017.8",
+        "Mana": "327.2 \u2013 1007.2",
+        "Health regen": "7.5 \u2013 20.25",
+        "Mana regen": "7.59 \u2013 16.09",
+        "Armor": "36 \u2013 87",
+        "Attack damage": "63 \u2013 115.7",
+        "Magic resist": "32.1 \u2013 53.35",
+        "Crit damage": "200%",
+        "Move speed": "350",
+        "Attack range": "125",
+        "Base AS": "0.668",
+        "Attack windup": "20.053%",
+        "AS ratio": "N/A",
+        "Bonus AS": "0 \u2013 45.9%",
+        "Gameplay radius": " 65",
+        "Selection radius": " 130",
+        "Pathing radius": " 35",
+        "Auto radius": " 400"
+    },
+    "Kindred": {
         "Health": "540 \u2013 1985",
         "Mana": "300 \u2013 895",
         "Health regen": "7 \u2013 16.35",
@@ -1067,7 +1161,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 525"
     },
-    "kled": {
+    "Kled": {
         "Health": "740 \u2013 2950",
         "Resource": "N/A",
         "Health regen": "6 \u2013 18.75",
@@ -1087,8 +1181,27 @@
         "Pathing radius": " 35",
         "Auto radius": " 750"
     },
-    "kog maw": {},
-    "leblanc": {
+    "Kog'Maw": {
+        "Health": "534 \u2013 2030",
+        "Mana": "325 \u2013 1005",
+        "Health regen": "3.75 \u2013 13.1",
+        "Mana regen": "8.75 \u2013 20.65",
+        "Armor": "24 \u2013 83.5",
+        "Attack damage": "61 \u2013 113.87",
+        "Magic resist": "30 \u2013 38.5",
+        "Crit damage": "200%",
+        "Move speed": "330",
+        "Attack range": "500",
+        "Base AS": "0.665",
+        "Attack windup": "16.622%",
+        "AS ratio": "N/A",
+        "Bonus AS": "0 \u2013 45.05%",
+        "Gameplay radius": " 65",
+        "Selection radius": " 130",
+        "Pathing radius": " 30",
+        "Auto radius": " 900"
+    },
+    "LeBlanc": {
         "Health": "528 \u2013 2092",
         "Mana": "334 \u2013 1184",
         "Health regen": "7.5 \u2013 16.85",
@@ -1108,7 +1221,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 525"
     },
-    "lee sin": {
+    "Lee Sin": {
         "Health": "575 \u2013 2020",
         "Energy": " 200",
         "Health regen": "7.5 \u2013 19.4",
@@ -1128,7 +1241,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 400"
     },
-    "leona": {
+    "Leona": {
         "Health": "576.16 \u2013 2055.16",
         "Mana": "302.2 \u2013 982.2",
         "Health regen": "8.5 \u2013 22.95",
@@ -1148,7 +1261,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 400"
     },
-    "lissandra": {
+    "Lissandra": {
         "Health": "550 \u2013 2080",
         "Mana": "475 \u2013 985",
         "Health regen": "7 \u2013 16.35",
@@ -1168,7 +1281,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 600"
     },
-    "lucian": {
+    "Lucian": {
         "Health": "571 \u2013 2033",
         "Mana": "348.88 \u2013 994.88",
         "Health regen": "3.75 \u2013 14.8",
@@ -1188,7 +1301,7 @@
         "Pathing radius": " 41",
         "Auto radius": " 800"
     },
-    "lulu": {
+    "Lulu": {
         "Health": "525 \u2013 1783",
         "Mana": "350 \u2013 1285",
         "Health regen": "6 \u2013 16.2",
@@ -1208,7 +1321,7 @@
         "Pathing radius": " 30",
         "Auto radius": " 625"
     },
-    "lux": {
+    "Lux": {
         "Health": "490 \u2013 1935",
         "Mana": "480 \u2013 879.5",
         "Health regen": "5.5 \u2013 14.85",
@@ -1228,7 +1341,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 625"
     },
-    "malphite": {
+    "Malphite": {
         "Health": "574.2 \u2013 2104.2",
         "Mana": "282.2 \u2013 962.2",
         "Health regen": "7 \u2013 16.35",
@@ -1248,7 +1361,7 @@
         "Pathing radius": " 50",
         "Auto radius": " 400"
     },
-    "malzahar": {
+    "Malzahar": {
         "Health": "537 \u2013 2016",
         "Mana": "375 \u2013 842.5",
         "Health regen": "6 \u2013 16.2",
@@ -1268,7 +1381,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 600"
     },
-    "maokai": {
+    "Maokai": {
         "Health": "565 \u2013 2180",
         "Mana": "377.28 \u2013 1108.28",
         "Health regen": "5 \u2013 17.75",
@@ -1288,7 +1401,7 @@
         "Pathing radius": " 50",
         "Auto radius": " 600"
     },
-    "master yi": {
+    "Master Yi": {
         "Health": "598.56 \u2013 2162.56",
         "Mana": "250.56 \u2013 964.56",
         "Health regen": "7.5 \u2013 18.55",
@@ -1308,8 +1421,27 @@
         "Pathing radius": " 35",
         "Auto radius": " 600"
     },
-    "miss fortune": {},
-    "mordekaiser": {
+    "Miss Fortune": {
+        "Health": "541 \u2013 2088",
+        "Mana": "325.84 \u2013 920.84",
+        "Health regen": "3.75 \u2013 14.8",
+        "Mana regen": "8.042 \u2013 19.09",
+        "Armor": "28 \u2013 79",
+        "Attack damage": "50 \u2013 95.9",
+        "Magic resist": "30 \u2013 38.5",
+        "Crit damage": "200%",
+        "Move speed": "325",
+        "Attack range": "550",
+        "Base AS": "0.656",
+        "Attack windup": "14.801%",
+        "AS ratio": "N/A",
+        "Bonus AS": "0 \u2013 38.25%",
+        "Gameplay radius": " 65",
+        "Selection radius": " 100",
+        "Pathing radius": " 35",
+        "Auto radius": " 800"
+    },
+    "Mordekaiser": {
         "Health": "575 \u2013 2105",
         "Resource": "N/A",
         "Health regen": "5 \u2013 17.75",
@@ -1329,7 +1461,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 400"
     },
-    "morgana": {
+    "Morgana": {
         "Health": "560 \u2013 2090",
         "Mana": "340 \u2013 1360",
         "Health regen": "5.5 \u2013 12.3",
@@ -1349,7 +1481,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 600"
     },
-    "nami": {
+    "Nami": {
         "Health": "475 \u2013 1733",
         "Mana": "365 \u2013 1096",
         "Health regen": "5.5 \u2013 14.85",
@@ -1369,7 +1501,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 600"
     },
-    "nasus": {
+    "Nasus": {
         "Health": "561.2 \u2013 2091.2",
         "Mana": "325.6 \u2013 1039.6",
         "Health regen": "9 \u2013 24.3",
@@ -1389,7 +1521,7 @@
         "Pathing radius": " 50",
         "Auto radius": " 350"
     },
-    "nautilus": {
+    "Nautilus": {
         "Health": "576.48 \u2013 2038.48",
         "Mana": "400 \u2013 1199",
         "Health regen": "8.5 \u2013 17.85",
@@ -1409,7 +1541,7 @@
         "Pathing radius": " 50",
         "Auto radius": " 400"
     },
-    "neeko": {
+    "Neeko": {
         "Health": "540 \u2013 2070",
         "Mana": "450 \u2013 960",
         "Health regen": "7.5 \u2013 20.25",
@@ -1429,7 +1561,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 600"
     },
-    "nidalee": {
+    "Nidalee": {
         "Health": "545 \u2013 1990",
         "Mana": "295.6 \u2013 1060.6",
         "Health regen": "6 \u2013 16.2",
@@ -1449,7 +1581,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 750"
     },
-    "nocturne": {
+    "Nocturne": {
         "Health": "585 \u2013 2030",
         "Mana": "275 \u2013 870",
         "Health regen": "7 \u2013 19.75",
@@ -1469,7 +1601,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 600"
     },
-    "nunu": {
+    "Nunu & Willump": {
         "Health": "570 \u2013 1964",
         "Mana": "280 \u2013 994",
         "Health regen": "5 \u2013 18.6",
@@ -1489,7 +1621,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 600"
     },
-    "olaf": {
+    "Olaf": {
         "Health": "597.24 \u2013 2178.24",
         "Mana": "315.6 \u2013 1029.6",
         "Health regen": "8.5 \u2013 23.8",
@@ -1509,7 +1641,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 400"
     },
-    "orianna": {
+    "Orianna": {
         "Health": "530 \u2013 2077",
         "Mana": "418 \u2013 843",
         "Health regen": "7 \u2013 16.35",
@@ -1529,7 +1661,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 525"
     },
-    "ornn": {
+    "Ornn": {
         "Health": "590 \u2013 2205",
         "Mana": "340.6 \u2013 1105.6",
         "Health regen": "9 \u2013 24.3",
@@ -1549,7 +1681,7 @@
         "Pathing radius": " 26",
         "Auto radius": " 600"
     },
-    "pantheon": {
+    "Pantheon": {
         "Health": "580 \u2013 2195",
         "Mana": "317.12 \u2013 844.12",
         "Health regen": "10 \u2013 21.05",
@@ -1569,7 +1701,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 600"
     },
-    "poppy": {
+    "Poppy": {
         "Health": "540 \u2013 2070",
         "Mana": "280 \u2013 960",
         "Health regen": "8 \u2013 21.6",
@@ -1589,7 +1721,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 400"
     },
-    "pyke": {
+    "Pyke": {
         "Health": "600 \u2013 2130",
         "Mana": "415 \u2013 1265",
         "Health regen": "7 \u2013 15.5",
@@ -1609,7 +1741,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 400"
     },
-    "qiyana": {
+    "Qiyana": {
         "Health": "590 \u2013 2120",
         "Mana": "320 \u2013 1170",
         "Health regen": "8.5 \u2013 19.55",
@@ -1629,7 +1761,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 750"
     },
-    "quinn": {
+    "Quinn": {
         "Health": "532.8 \u2013 1977.8",
         "Mana": "268.8 \u2013 863.8",
         "Health regen": "5.5 \u2013 14.85",
@@ -1649,7 +1781,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 750"
     },
-    "rakan": {
+    "Rakan": {
         "Health": "540 \u2013 1985",
         "Mana": "315 \u2013 1165",
         "Health regen": "5 \u2013 13.5",
@@ -1671,9 +1803,47 @@
         "Pathing radius": " 35",
         "Auto radius": " 475"
     },
-    "rammus": {},
-    "rek sai": {},
-    "renekton": {
+    "Rammus": {
+        "Health": "564.48 \u2013 2179.48",
+        "Mana": "310.44 \u2013 871.44",
+        "Health regen": "8 \u2013 17.35",
+        "Mana regen": "7.84 \u2013 16.34",
+        "Armor": "36 \u2013 109.1",
+        "Attack damage": "55.88 \u2013 115.38",
+        "Magic resist": "32.1 \u2013 53.35",
+        "Crit damage": "200%",
+        "Move speed": "335",
+        "Attack range": "125",
+        "Base AS": "0.656",
+        "Attack windup": "22.917%",
+        "AS ratio": "0.625",
+        "Bonus AS": "0 \u2013 37.66%",
+        "Gameplay radius": " 65",
+        "Selection radius": " 120",
+        "Pathing radius": " 35",
+        "Auto radius": " 600"
+    },
+    "Rek'Sai": {
+        "Health": "570 \u2013 2015",
+        "Resource": "N/A",
+        "Health regen": "7.5 \u2013 18.55",
+        "Secondary Bar": " Rage (100)",
+        "Armor": "36 \u2013 99.75",
+        "Attack damage": "64 \u2013 115",
+        "Magic resist": "32.1 \u2013 53.35",
+        "Crit damage": "200%",
+        "Move speed": "335",
+        "Attack range": "175",
+        "Base AS": "0.667",
+        "Attack windup": "26.667%",
+        "AS ratio": "N/A",
+        "Bonus AS": "0 \u2013 34%",
+        "Gameplay radius": " 65",
+        "Selection radius": " 100",
+        "Pathing radius": " 30",
+        "Auto radius": " 600"
+    },
+    "Renekton": {
         "Health": "575 \u2013 2054",
         "Resource": "N/A",
         "Health regen": "8 \u2013 20.75",
@@ -1693,7 +1863,7 @@
         "Pathing radius": " 50",
         "Auto radius": " 600"
     },
-    "rengar": {
+    "Rengar": {
         "Health": "585 \u2013 2115",
         "Resource": "N/A",
         "Health regen": "7 \u2013 15.5",
@@ -1713,7 +1883,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 600"
     },
-    "riven": {
+    "Riven": {
         "Health": "560 \u2013 2022",
         "Resource": "N/A",
         "Health regen": "8.5 \u2013 17",
@@ -1733,7 +1903,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 600"
     },
-    "rumble": {
+    "Rumble": {
         "Health": "589 \u2013 2034",
         "Resource": "N/A",
         "Health regen": "8 \u2013 18.2",
@@ -1753,7 +1923,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 600"
     },
-    "ryze": {
+    "Ryze": {
         "Health": "575 \u2013 2241",
         "Mana": "300 \u2013 1150",
         "Health regen": "8 \u2013 21.6",
@@ -1773,7 +1943,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 575"
     },
-    "sejuani": {
+    "Sejuani": {
         "Health": "560 \u2013 2260",
         "Mana": "400 \u2013 1080",
         "Health regen": "8.5 \u2013 25.5",
@@ -1793,7 +1963,7 @@
         "Pathing radius": " 50",
         "Auto radius": " 750"
     },
-    "senna": {
+    "Senna": {
         "Health": "520 \u2013 1795",
         "Mana": "350 \u2013 1115",
         "Health regen": "3.5 \u2013 12.85",
@@ -1815,7 +1985,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 800"
     },
-    "sett": {
+    "Sett": {
         "Health": "600 \u2013 2181",
         "Resource": "N/A",
         "Health regen": "7 \u2013 15.5",
@@ -1835,7 +2005,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 600"
     },
-    "shaco": {
+    "Shaco": {
         "Health": "587 \u2013 2100",
         "Mana": "297.2 \u2013 977.2",
         "Health regen": "8.5 \u2013 17.85",
@@ -1855,7 +2025,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 400"
     },
-    "shen": {
+    "Shen": {
         "Health": "540 \u2013 1985",
         "Energy": " 400",
         "Health regen": "8.5 \u2013 21.25",
@@ -1875,7 +2045,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 400"
     },
-    "shyvana": {
+    "Shyvana": {
         "Health": "595 \u2013 2210",
         "Resource": "N/A",
         "Health regen": "8.5 \u2013 22.1",
@@ -1895,7 +2065,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 600"
     },
-    "singed": {
+    "Singed": {
         "Health": "580 \u2013 2025",
         "Mana": "330 \u2013 1095",
         "Health regen": "9.5 \u2013 18.85",
@@ -1915,7 +2085,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 300"
     },
-    "sion": {
+    "Sion": {
         "Health": "545 \u2013 1786",
         "Mana": "330 \u2013 1044",
         "Health regen": "7.5 \u2013 21.1",
@@ -1935,7 +2105,7 @@
         "Pathing radius": " 26",
         "Auto radius": " 600"
     },
-    "sivir": {
+    "Sivir": {
         "Health": "532 \u2013 2028",
         "Mana": "284 \u2013 1134",
         "Health regen": "3.25 \u2013 12.6",
@@ -1955,7 +2125,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 500"
     },
-    "skarner": {
+    "Skarner": {
         "Health": "601.28 \u2013 2131.28",
         "Mana": "320 \u2013 1000",
         "Health regen": "9 \u2013 23.45",
@@ -1975,7 +2145,7 @@
         "Pathing radius": " 50",
         "Auto radius": " 600"
     },
-    "sona": {
+    "Sona": {
         "Health": "482.36 \u2013 1791.36",
         "Mana": "340.6 \u2013 1105.6",
         "Health regen": "5.5 \u2013 14.85",
@@ -1995,7 +2165,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 800"
     },
-    "soraka": {
+    "Soraka": {
         "Health": "535 \u2013 1793",
         "Mana": "425 \u2013 1105",
         "Health regen": "2.5 \u2013 11",
@@ -2015,7 +2185,7 @@
         "Pathing radius": " 44",
         "Auto radius": " 600"
     },
-    "swain": {
+    "Swain": {
         "Health": "525 \u2013 1970",
         "Mana": "468 \u2013 952.5",
         "Health regen": "7 \u2013 18.05",
@@ -2035,7 +2205,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 525"
     },
-    "sylas": {
+    "Sylas": {
         "Health": "525 \u2013 2480",
         "Mana": "280 \u2013 1130",
         "Health regen": "9 \u2013 24.3",
@@ -2055,7 +2225,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 525"
     },
-    "syndra": {
+    "Syndra": {
         "Health": "523 \u2013 2053",
         "Mana": "480 \u2013 1160",
         "Health regen": "6.5 \u2013 16.7",
@@ -2075,8 +2245,27 @@
         "Pathing radius": " 35",
         "Auto radius": " 575"
     },
-    "tahm kench": {},
-    "taliyah": {
+    "Tahm Kench": {
+        "Health": "600 \u2013 2300",
+        "Mana": "325 \u2013 1005",
+        "Health regen": "6.5 \u2013 15.85",
+        "Mana regen": "8 \u2013 25",
+        "Armor": "47 \u2013 106.5",
+        "Attack damage": "56 \u2013 110.4",
+        "Magic resist": "32.1 \u2013 53.35",
+        "Crit damage": "200%",
+        "Move speed": "335",
+        "Attack range": "175",
+        "Base AS": "0.658",
+        "Attack windup": "25.016%",
+        "AS ratio": "N/A",
+        "Bonus AS": "0 \u2013 42.5%",
+        "Gameplay radius": " 80",
+        "Selection radius": " 125",
+        "Pathing radius": " 50",
+        "Auto radius": " 600"
+    },
+    "Taliyah": {
         "Health": "532 \u2013 2062",
         "Mana": "425 \u2013 935",
         "Health regen": "7 \u2013 18.9",
@@ -2096,7 +2285,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 550"
     },
-    "talon": {
+    "Talon": {
         "Health": "588 \u2013 2203",
         "Mana": "377.2 \u2013 1006.2",
         "Health regen": "8.5 \u2013 21.25",
@@ -2116,7 +2305,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 400"
     },
-    "taric": {
+    "Taric": {
         "Health": "575 \u2013 2105",
         "Mana": "300 \u2013 1320",
         "Health regen": "6 \u2013 14.5",
@@ -2136,7 +2325,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 350"
     },
-    "teemo": {
+    "Teemo": {
         "Health": "528 \u2013 2058",
         "Mana": "334 \u2013 674",
         "Health regen": "5.5 \u2013 16.55",
@@ -2156,7 +2345,7 @@
         "Pathing radius": " 30",
         "Auto radius": " 500"
     },
-    "thresh": {
+    "Thresh": {
         "Health": "560.52 \u2013 2141.52",
         "Mana": "273.92 \u2013 1021.92",
         "Health regen": "7 \u2013 16.35",
@@ -2178,7 +2367,7 @@
         "Pathing radius": " 36",
         "Auto radius": " 475"
     },
-    "tristana": {
+    "Tristana": {
         "Health": "559 \u2013 2055",
         "Mana": "250 \u2013 794",
         "Health regen": "3.75 \u2013 14.8",
@@ -2198,7 +2387,7 @@
         "Pathing radius": " 30",
         "Auto radius": " 800"
     },
-    "trundle": {
+    "Trundle": {
         "Health": "616.28 \u2013 2248.28",
         "Mana": "281.6 \u2013 1046.6",
         "Health regen": "6 \u2013 18.75",
@@ -2218,7 +2407,7 @@
         "Pathing radius": " 26",
         "Auto radius": " 400"
     },
-    "tryndamere": {
+    "Tryndamere": {
         "Health": "625.64 \u2013 2291.64",
         "Resource": "N/A",
         "Health regen": "8.5 \u2013 23.8",
@@ -2238,8 +2427,27 @@
         "Pathing radius": " 35",
         "Auto radius": " 400"
     },
-    "twisted fate": {},
-    "twitch": {
+    "Twisted Fate": {
+        "Health": "534 \u2013 2132",
+        "Mana": "333 \u2013 656",
+        "Health regen": "5.5 \u2013 15.7",
+        "Mana regen": "8 \u2013 21.6",
+        "Armor": "20.542 \u2013 74.09",
+        "Attack damage": "49.954 \u2013 106.05",
+        "Magic resist": "30 \u2013 38.5",
+        "Crit damage": "200%",
+        "Move speed": "335",
+        "Attack range": "525",
+        "Base AS": "0.651",
+        "Attack windup": "24.404%",
+        "AS ratio": "N/A",
+        "Bonus AS": "0 \u2013 54.74%",
+        "Gameplay radius": " 65",
+        "Selection radius": " 110",
+        "Pathing radius": " 35",
+        "Auto radius": " 750"
+    },
+    "Twitch": {
         "Health": "582 \u2013 2010",
         "Mana": "287.2 \u2013 967.2",
         "Health regen": "3.75 \u2013 13.95",
@@ -2259,7 +2467,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 575"
     },
-    "udyr": {
+    "Udyr": {
         "Health": "593.32 \u2013 2276.32",
         "Mana": "270.4 \u2013 780.4",
         "Health regen": "6 \u2013 18.75",
@@ -2279,7 +2487,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 400"
     },
-    "urgot": {
+    "Urgot": {
         "Health": "585 \u2013 2081",
         "Mana": "340 \u2013 1105",
         "Health regen": "7.5 \u2013 19.4",
@@ -2299,7 +2507,7 @@
         "Pathing radius": " 50",
         "Auto radius": " 550"
     },
-    "varus": {
+    "Varus": {
         "Health": "500 \u2013 2013",
         "Mana": "360 \u2013 921",
         "Health regen": "3.5 \u2013 12.85",
@@ -2319,7 +2527,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 600"
     },
-    "vayne": {
+    "Vayne": {
         "Health": "515 \u2013 2028",
         "Mana": "231.8 \u2013 826.8",
         "Health regen": "3.5 \u2013 12.85",
@@ -2339,7 +2547,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 575"
     },
-    "veigar": {
+    "Veigar": {
         "Health": "505 \u2013 2103",
         "Mana": "490 \u2013 932",
         "Health regen": "6.5 \u2013 16.7",
@@ -2359,8 +2567,29 @@
         "Pathing radius": " 30",
         "Auto radius": " 525"
     },
-    "vel koz": {},
-    "vi": {
+    "Vel'Koz": {
+        "Health": "520 \u2013 2016",
+        "Mana": "469 \u2013 826",
+        "Health regen": "5.5 \u2013 14.85",
+        "Mana regen": "8 \u2013 21.6",
+        "Armor": "21.88 \u2013 81.38",
+        "Attack damage": "54.9379 \u2013 108.35",
+        "Magic resist": "30 \u2013 38.5",
+        "Crit damage": "200%",
+        "Move speed": "340",
+        "Attack range": "525",
+        "Base AS": "0.625",
+        "Attack windup": "20%",
+        "AS ratio": "N/A",
+        "Bonus AS": "0 \u2013 23.12%",
+        "Missile speed": "Non-projectile",
+        "N/A": " ",
+        "Gameplay radius": " 65",
+        "Selection radius": " 89",
+        "Pathing radius": " 35",
+        "Auto radius": " 575"
+    },
+    "Vi": {
         "Health": "585 \u2013 2030",
         "Mana": "295 \u2013 1060",
         "Health regen": "10 \u2013 27",
@@ -2380,7 +2609,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 600"
     },
-    "viktor": {
+    "Viktor": {
         "Health": "530 \u2013 2060",
         "Mana": "405 \u2013 830",
         "Health regen": "8 \u2013 19.05",
@@ -2400,7 +2629,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 525"
     },
-    "vladimir": {
+    "Vladimir": {
         "Health": "537 \u2013 2169",
         "Resource": "N/A",
         "Health regen": "7 \u2013 17.2",
@@ -2420,8 +2649,27 @@
         "Pathing radius": " 35",
         "Auto radius": " 600"
     },
-    "volibear": {},
-    "warwick": {
+    "Volibear": {
+        "Health": "584.48 \u2013 2046.48",
+        "Mana": "270.4 \u2013 780.4",
+        "Health regen": "8 \u2013 19.05",
+        "Mana regen": "8.092 \u2013 19.14",
+        "Armor": "35 \u2013 94.5",
+        "Attack damage": "68 \u2013 124.1",
+        "Magic resist": "32.1 \u2013 53.35",
+        "Crit damage": "200%",
+        "Move speed": "345",
+        "Attack range": "125",
+        "Base AS": "0.658",
+        "Attack windup": "23%",
+        "AS ratio": "N/A",
+        "Bonus AS": "0 \u2013 45.39%",
+        "Gameplay radius": " 80",
+        "Selection radius": " 125",
+        "Pathing radius": " 50",
+        "Auto radius": " 400"
+    },
+    "Warwick": {
         "Health": "550 \u2013 1995",
         "Mana": "280 \u2013 875",
         "Health regen": "4 \u2013 16.75",
@@ -2441,7 +2689,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 400"
     },
-    "wukong": {
+    "Wukong": {
         "Health": "540 \u2013 1985",
         "Mana": "300 \u2013 1065",
         "Health regen": "4 \u2013 15.05",
@@ -2461,7 +2709,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 600"
     },
-    "xayah": {
+    "Xayah": {
         "Health": "561 \u2013 2023",
         "Mana": "340 \u2013 1020",
         "Health regen": "3.25 \u2013 16",
@@ -2481,7 +2729,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 800"
     },
-    "xerath": {
+    "Xerath": {
         "Health": "526 \u2013 2090",
         "Mana": "459 \u2013 833",
         "Health regen": "5.5 \u2013 14.85",
@@ -2501,8 +2749,27 @@
         "Pathing radius": " 35",
         "Auto radius": " 600"
     },
-    "xin zhao": {},
-    "yasuo": {
+    "Xin Zhao": {
+        "Health": "570 \u2013 2134",
+        "Mana": "273.8 \u2013 868.8",
+        "Health regen": "8 \u2013 19.9",
+        "Mana regen": "7.256 \u2013 14.91",
+        "Armor": "35 \u2013 94.5",
+        "Attack damage": "66 \u2013 117",
+        "Magic resist": "32.1 \u2013 53.35",
+        "Crit damage": "200%",
+        "Move speed": "345",
+        "Attack range": "175",
+        "Base AS": "0.645",
+        "Attack windup": "18.71%",
+        "AS ratio": "N/A",
+        "Bonus AS": "0 \u2013 59.5%",
+        "Gameplay radius": " 65",
+        "Selection radius": " 108",
+        "Pathing radius": " 35",
+        "Auto radius": " 750"
+    },
+    "Yasuo": {
         "Health": "523 \u2013 2002",
         "Resource": "N/A",
         "Health regen": "6.5 \u2013 21.8",
@@ -2522,7 +2789,7 @@
         "Pathing radius": " 32",
         "Auto radius": " 400"
     },
-    "yorick": {
+    "Yorick": {
         "Health": "580 \u2013 2280",
         "Mana": "300 \u2013 980",
         "Health regen": "8 \u2013 21.6",
@@ -2542,7 +2809,7 @@
         "Pathing radius": " 50",
         "Auto radius": " 400"
     },
-    "yuumi": {
+    "Yuumi": {
         "Health": "480 \u2013 1670",
         "Mana": "400 \u2013 1165",
         "Health regen": "7 \u2013 16.35",
@@ -2562,7 +2829,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 550"
     },
-    "zac": {
+    "Zac": {
         "Health": "615 \u2013 2230",
         "Resource": "N/A (Uses Health)",
         "Health regen": "8 \u2013 16.5",
@@ -2582,7 +2849,7 @@
         "Pathing radius": " 43",
         "Auto radius": " 400"
     },
-    "zed": {
+    "Zed": {
         "Health": "584 \u2013 2029",
         "Energy": " 200",
         "Health regen": "7 \u2013 18.05",
@@ -2602,7 +2869,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 400"
     },
-    "ziggs": {
+    "Ziggs": {
         "Health": "536 \u2013 2100",
         "Mana": "480 \u2013 879.5",
         "Health regen": "6.5 \u2013 16.7",
@@ -2622,7 +2889,7 @@
         "Pathing radius": " 30",
         "Auto radius": " 800"
     },
-    "zilean": {
+    "Zilean": {
         "Health": "504 \u2013 1898",
         "Mana": "452 \u2013 962",
         "Health regen": "5.5 \u2013 14",
@@ -2642,7 +2909,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 550"
     },
-    "zoe": {
+    "Zoe": {
         "Health": "560 \u2013 2124",
         "Mana": "425 \u2013 850",
         "Health regen": "6.5 \u2013 16.7",
@@ -2662,7 +2929,7 @@
         "Pathing radius": " 35",
         "Auto radius": " 550"
     },
-    "zyra": {
+    "Zyra": {
         "Health": "504 \u2013 1847",
         "Mana": "418 \u2013 843",
         "Health regen": "5.5 \u2013 14",
@@ -2681,5 +2948,25 @@
         "Selection radius": " 120",
         "Pathing radius": " 35",
         "Auto radius": " 575"
+    },
+    "Jarvan IV": {
+        "Health": "570 \u2013 2100",
+        "Mana": "300 \u2013 980",
+        "Health regen": "8 \u2013 19.9",
+        "Mana regen": "6.5 \u2013 14.15",
+        "Armor": "34 \u2013 95.2",
+        "Attack damage": "64 \u2013 121.8",
+        "Magic resist": "32.1 \u2013 53.35",
+        "Crit damage": "200%",
+        "Move speed": "340",
+        "Attack range": "175",
+        "Base AS": "0.658",
+        "Attack windup": "17.544%",
+        "AS ratio": "N/A",
+        "Bonus AS": "0 \u2013 42.5%",
+        "Gameplay radius": " 65",
+        "Selection radius": " 125",
+        "Pathing radius": " 35",
+        "Auto radius": " 600"
     }
 }

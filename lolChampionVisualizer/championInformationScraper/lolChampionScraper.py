@@ -36,8 +36,25 @@ def scrapeForChampionNames(writeToFile=True):
     championList = []
     # iterates through the list and gets the champion's names
     for champion in championContainer:
-        href = champion.get_attribute("href")
-        championList.append(href.split("/")[-2])
+        #gets the champions name and appends it to the list
+        championName = champion.find_element_by_xpath("span[2]/span").get_attribute('innerHTML')
+        championName = championName.replace("&amp;", "&")
+        championList.append(championName)
+        #gets the champions d
+        try:
+            championImage = champion.find_element_by_xpath("span[1]/img")
+            filePath = "images\\championImages\\" + championName + "\\"
+
+            if not os.path.exists(os.path.dirname(filePath)):
+                try:
+                    os.makedirs(os.path.dirname(filePath))
+                except OSError as exc: # Guard against race condition
+                    pass
+            if not(os.path.exists(filePath + championName.lower().replace(" ", "_") + "_splash_art.png") or os.path.exists(filePath + championName.lower().replace(" ", "_") + "_splash_art.jpg")):
+                urllib.request.urlretrieve(championImage.get_attribute('src'), filePath + championName.lower().replace(" ", "_") + "_splash_art.png")
+        except:
+            traceback.print_exc()
+            pass
     
     # puts the champions into a text file
     if writeToFile:
@@ -58,35 +75,20 @@ def scrapeForChampionStatistics(championList):
     # initializes our web driver
     driver = getChromeDriver()
 
-    #championList = ["ashe", "aurelion sol", "akali"]
     for championName in championList:
         championName = championName.replace("\n", "")
         championStatistics[championName] = {}
         try:
             try:
-                driver.get("https://leagueoflegends.fandom.com/wiki/"+championName.replace(" ", "_"))
-                WebDriverWait(driver, 6).until(EC.visibility_of_element_located((By.ID, "infobox-champion-container")))
+                urlTitle = championName.replace(" ", "_")
+                if championName == "Jarvan IV":
+                    pass
+                else:
+                    urlTitle = urlTitle.title()
+                driver.get("https://leagueoflegends.fandom.com/wiki/"+(urlTitle))
+                WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.ID, "infobox-champion-container")))
             except:
-                try:
-                    driver.get("https://leagueoflegends.fandom.com/wiki/List_of_champions")
-                    championElements = driver.find_elements_by_tag_name("tbody")[1].find_element_by_xpath("*")
-                    foundChampion = False
-                    for element in championElements:
-                        # if we have found the champion then get its name from the attribute and go to the site
-                        if foundChampion:
-                            hrefLink = element.find_element_by_xpath('td[1]/span/span[2]/a').get_attribute("href")
-                            dataSortChampionValue = element.find_elements_by_xpath("*")[0].get_attribute("data-sort-value").lower()
-                            driver.get(hrefLink)
-                            break
-                        # if the champion who is above the searched for champion is found then go to the next champion
-                        sortValue = element.find_elements_by_xpath("*")[0].get_attribute("data-sort-value")
-                        if sortValue is not None and sortValue.lower() == lastValidChampion:
-                            foundChampion = True
-                            continue
-
-                    WebDriverWait(driver, 6).until(EC.visibility_of_element_located((By.ID, "infobox-champion-container")))
-                except:
-                    continue
+                continue
 
             # there are two aside containers, one is the champion image which comes first and then followed by the statistics content
             asideContainer = driver.find_elements_by_tag_name('aside')[1]
@@ -96,9 +98,20 @@ def scrapeForChampionStatistics(championList):
             try:
                 imageRenderContainer = driver.find_elements_by_tag_name('aside')[0]
                 championImage = imageRenderContainer.find_elements_by_tag_name('img')[0]
-                urllib.request.urlretrieve(championImage.get_attribute('src'), "images\\championImages\\"+championImage.get_attribute('data-image-key').lower())
+                filePath = "images\\championImages\\" + championName + "\\"
+
+                if not os.path.exists(os.path.dirname(filePath)):
+                    try:
+                        os.makedirs(os.path.dirname(filePath))
+                    except OSError as exc: # Guard against race condition
+                        pass
+                
+                imageSaveName = "origininal_" + championImage.get_attribute('data-image-key').lower()
+                if imageSaveName == 'nunu_render.png':
+                    imageSaveName = 'nunu_&_willump_render.png'
+                urllib.request.urlretrieve(championImage.get_attribute('src'), filePath + imageSaveName)
             except:
-                #traceback.print_exc()
+                traceback.print_exc()
                 pass
             # get the aside from inside of the container
             #statisticsContainer = contentWrapper.find_element_by_xpath('div[1]/aside[1]')
@@ -161,6 +174,36 @@ def scrapeForChampionModels():
     pass
 
 
+# method used to scrape https://leagueoflegends.fandom.com/wiki/List_of_champions for every champion's icons and save them
+# higher res can be scraped from https://www.op.gg/champion/kled/statistics/top in a new version
+def scrapeForChampionIcons():
+    driver = getChromeDriver()
+    driver.get('https://leagueoflegends.fandom.com/wiki/List_of_champions')
+    championContainer = driver.find_elements_by_tag_name('tbody')[1].find_elements_by_xpath('*')
+
+    for champion in championContainer:
+        championName = champion.find_elements_by_tag_name('td')[0].get_attribute('data-sort-value')
+        imageSaveName = championName.replace(" ", "_").lower() + "_icon.png"
+
+        # src does not work past aurelion sol so use data-src
+        imageSrc = champion.find_element_by_xpath('td[1]/span/span[1]/a/img').get_attribute('data-src')
+        filePath = "images\\championImages\\" + championName + "\\"
+
+        if championName == 'Nunu':
+            filePath = "images\\championImages\\Nunu & Willump\\"
+            imageSaveName = 'nunu_&_willump_icon.png'
+        
+        try:
+            if not os.path.exists(os.path.dirname(filePath)):
+                print("Icon Link Broken- ", championName, " ", imageSrc)
+            else:
+                print(championName, imageSrc)
+                #os.remove(filePath + imageSaveName)
+                urllib.request.urlretrieve(imageSrc, filePath + imageSaveName)
+        except:
+            continue
+
+
 # method used to return a list of all current champions
 def getListOfChampions():
     # opens the champions name list and gets all of our champion information
@@ -202,7 +245,7 @@ def checkForUpdates():
     if os.path.exists('Champions.txt'):
         oldList = getListOfChampions()
         newList = scrapeForChampionNames(True)
-        newList = [name.replace('-', ' ') for name in newList]
+        #newList = [name.replace('-', ' ') for name in newList]
         set_difference = set(newList) - set(oldList)
         list_difference = list(set_difference)
         if list_difference:            

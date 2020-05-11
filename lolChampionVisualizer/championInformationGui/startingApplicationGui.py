@@ -37,7 +37,7 @@ class StartScreenLayout(RelativeLayout):
     def drawOverallLayout(self):
         layout = RelativeLayout()
         title = Label(text="LoL Champion Visualizer", size_hint=(1, 0.2), font_size='40sp', pos_hint ={'middle':1, 'top':1})
-        newDataButton = Button(text="Search For New Data", size_hint=(0.5, 0.8), font_size='32sp', pos_hint ={'left':1, 'middle':1})
+        newDataButton = Button(text="Search For New Champions", size_hint=(0.5, 0.8), font_size='32sp', pos_hint ={'left':1, 'middle':1})
         existingDataButton = Button(text="Use Existing Data", size_hint=(0.5, 0.8), font_size='32sp', pos_hint ={'right':1, 'middle':1})
         #on_press=self.changeToSearchGui()
         newDataButton.bind(on_press=lambda a:self.screen_transition_newData())
