@@ -8,7 +8,17 @@ The champion statistics and original rendering model is scraped from the fan mad
 - https://leagueoflegends.fandom.com/wiki/
 
 
-## Features
+## Table Of Contents:
+
+- <a href="#features">Features</a> </br>
+- <a href="#how_to">How To Use</a> </br>
+- <a href="#results">Results</a> </br>
+- <a href="#tools_used">Tools Used</a> </br>
+- <a href="#upcoming_features">Upcoming Features</a> </br>
+
+
+<h2 id="features">Features</h2>
+
 - Can search for new champions released for extra information or use the existing information that was collected
 - Search seamlessly for champions using their name and high res icons for fast recognition.
 - Look between champion visuals (includes the original rendering of the champion and their loading splash art)
@@ -16,7 +26,8 @@ The champion statistics and original rendering model is scraped from the fan mad
   - attributes sorted by offense, defense, and ranges.
 
 
-## How To Use
+<h2 id="how_to">How To Use</h2>
+
 *In a later version this will be streamlined and will be launched using a simple .exe file*
 
 Commands to execute for the GUI environment:
@@ -33,11 +44,23 @@ In the new built environment run:
 This will now launch the whole folder as a module and the application will launch
 
 
-## Results
+<h2 id="results">Results</h2>
+
+### Choose What Data To Use
+![](/applicationImages/startingScreen.png)
+### Search For Champions
+![](/applicationImages/searchScreen_base.png)
+### Specific Search
+![](/applicationImages/searchScreen_ja.png)
+### Jarvan IV Statistics
+![](/applicationImages/jarvan_defense.png)
+![](/applicationImages/jarvan_ranges.png)
+### Ahri Statistics
+![](/applicationImages/ahri_offense.png)
 
 
+<h2 id="tools_used">Tools Used</h2>
 
-## Tools Used
 - Selenium with chrome driver - for web scraping of websites
 - Json - for dumping the data collected and accessing it easily later
 - Urllib - for any page downloads of visuals needed
@@ -45,7 +68,9 @@ This will now launch the whole folder as a module and the application will launc
 - Unittest - used for testing the application to make sure everything is running correctly.
 
 
-## Upcoming Features in new versions
+<h2 id="upcoming_features">Upcoming Features For New Versions</h2>
+
 - For each champion, scrape their 3d skin model from: https://teemo.gg/model-viewer and display it in the skin window with the other renderings.
 - Implement a window where you can view what champion has the highest stat for each attribute
+- Add more options to search by in the search window
 - Update the visuals of the application window and make it sleeker.
