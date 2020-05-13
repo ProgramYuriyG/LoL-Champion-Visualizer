@@ -40,7 +40,9 @@ Commands to execute for the GUI environment:
 - pip install selenium
 
 In the new built environment run: 
+
 - python -m lolChampionVisualizer
+
 This will now launch the whole folder as a module and the application will launch
 
 
@@ -61,11 +63,11 @@ This will now launch the whole folder as a module and the application will launc
 
 <h2 id="tools_used">Tools Used</h2>
 
-- Selenium with chrome driver - for web scraping of websites
-- Json - for dumping the data collected and accessing it easily later
-- Urllib - for any page downloads of visuals needed
-- Kivy - for the gui application to display the information collected
-- Unittest - used for testing the application to make sure everything is running correctly.
+- Selenium with chromedriver - For web scraping of websites
+- Json - For dumping the data collected and accessing it easily later
+- Urllib - For any page downloads of visuals needed
+- Kivy - For the gui application to display the information collected
+- Unittest - For testing the application to make sure everything is running correctly.
 
 
 <h2 id="upcoming_features">Upcoming Features For New Versions</h2>
