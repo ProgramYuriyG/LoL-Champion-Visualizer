@@ -3,11 +3,16 @@ from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import Select
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.keys import Keys
+from pyautogui import press   # used for the escape press - pip install pyautogui
 import json
 import sys, traceback
 import urllib.request
 import traceback
 import os
+import math
 
 '''
 Website that champion names and pictures will be parsed from:
@@ -171,7 +176,79 @@ def scrapeForChampionStatistics(championList):
 # remove background with: https://photoscissors.com or https://www.remove.bg/upload
 # get the 3d model from https://teemo.gg/model-viewer
 def scrapeForChampionModels():
-    pass
+    os.mkdir('testImageSaves')
+    # get the website and it should automatically be on Champions
+    driver = getChromeDriver()
+    driver.implicitly_wait(10)
+    driver.get('https://teemo.gg/model-viewer')
+    current_window = driver.current_window_handle
+    # get all of the options to iterate through selections and remove the first option since it is the disabled one
+    champion_options = driver.find_element_by_id('model-viewer-champions').find_elements_by_tag_name('option')
+    del champion_options[0]
+    champion_options_name = [name.text for name in champion_options]
+    
+    # iterate through all of the champions available
+    wait = WebDriverWait(driver, 10)
+    for champion_name in champion_options_name:
+        # select the champion whos skins we are viewing
+        Select(driver.find_element_by_id('model-viewer-champions')).select_by_visible_text(champion_name)
+        driver.find_element_by_id('model-viewer-load-button').click()
+        # wait for page to finish loading then get all skin options
+        skin_options = driver.find_element_by_id('model-viewer-champion-skins').find_elements_by_tag_name('option')
+        del skin_options[0]
+        skin_options_name = [skin.text for skin in skin_options]
+        # clean out the skin list
+        remove_skin_list = []
+        for skin_name in skin_options_name:
+            if skin_name[-1].isdigit():
+                if int(skin_name[-1]) > 1:
+                    remove_skin_list.append(skin_name)
+
+        # removes the extra chroma skins from the skin name set
+        skin_options_name = list(set(skin_options_name) - set(remove_skin_list))
+        print(skin_options_name)
+        # wait until the model is available to get the screenshot
+        for skin_name in skin_options_name:
+            # select the specific skin
+            Select(driver.find_element_by_id('model-viewer-champion-skins')).select_by_visible_text(skin_name)
+            driver.find_element_by_id('model-viewer-load-button').click()
+            # wait until the skin is loaded in
+            wait.until(EC.presence_of_element_located((By.ID, 'champion-model')))
+
+            # load in the right animation
+            selector_list = [champion_name+'_Idle1', champion_name+'_idle1', champion_name+'_Idle01', champion_name+'_unsheath']
+            try:
+                for selector in selector_list:
+                    Select(driver.find_element_by_id('model-viewer-animation')).select_by_visible_text(selector)
+            except:
+                continue
+                    
+            # pause the animation
+            try:
+                driver.find_element_by_class_name('lol-icon icon-pause').click()
+            except:
+                driver.find_element_by_id('model-viewer-play-pause').click()
+            # set the animation back to the beginning
+            action=ActionChains(driver)
+            frame_slider = driver.find_element_by_id('model-viewer-frame')
+
+            # click to be at the starting frame, move offset starts from the upper left corner
+            width = 5
+            height = frame_slider.size['height']/2
+            action.move_to_element_with_offset(frame_slider, width, height).click().perform()
+
+            # maximize the application
+            driver.find_element_by_id('model-viewer-fullscreen').click()
+            # move the frame down a little
+            action.drag_and_drop_by_offset(driver.find_element_by_id('champion-model'), 0, 10).perform()
+
+            # take a screenshot of the skin and save it to the champion's image folder
+            skin_name = skin_name.replace(" Chroma 1", "").replace("Default ", "").replace(" ", "_")
+            driver.save_screenshot('testImageSaves\\'+skin_name+'.png')
+            # exits out of fullscreen
+            #action.send_keys(Keys.ESCAPE).perform()
+            press('esc')
+    return
 
 
 # method used to scrape https://leagueoflegends.fandom.com/wiki/List_of_champions for every champion's icons and save them

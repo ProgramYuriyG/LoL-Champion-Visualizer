@@ -1,5 +1,5 @@
 import lolChampionVisualizer.championInformationScraper.lolChampionScraper as championScraper
-import lolChampionVisualizer.championInformationGui.applicationGui as guiApp
+#import lolChampionVisualizer.championInformationGui.applicationGui as guiApp
 
 
 if __name__ == '__main__':
@@ -7,4 +7,5 @@ if __name__ == '__main__':
     #championScraper.checkForUpdates()
     #championScraper.getSpecificChampionInformation("annie")
     #championScraper.getAllChampionInformation()
-    guiApp.ChampionVisualizerApp().run()
+    championScraper.scrapeForChampionModels()
+    #guiApp.ChampionVisualizerApp().run()
